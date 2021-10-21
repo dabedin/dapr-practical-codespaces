@@ -54,11 +54,10 @@ logs :
 
 test :
 	@echo "I'm in some_dir"
-	@cd /workspaces/Practical-Microservices-with-Dapr-and-.NET/chapter08/ && \
 	dir && \
 	docker ps
 
-	@cd /workspaces/Practical-Microservices-with-Dapr-and-.NET/chapter08/ && \
+	@dapr run --app-id "reservationactor-service" --app-port "5004" --dapr-grpc-port "50040" --dapr-http-port "5040" --components-path "components" -- dotnet run --project sample.microservice.reservationactor.service/sample.microservice.reservationactor.service.csproj --urls="http://+:5004"
 	#dapr run --app-id "reservation-service" --app-port "5002" --dapr-grpc-port "50020" --dapr-http-port "5020" --components-path "components" -- dotnet run --project sample.microservice.reservation/sample.microservice.reservation.csproj --urls="http://+:5002" && \
-	dapr run --app-id "reservationactor-service" --app-port "5004" --dapr-grpc-port "50040" --dapr-http-port "5040" --components-path "components" -- dotnet run --project sample.microservice.reservationactor.service/sample.microservice.reservationactor.service.csproj --urls="http://+:5004"
+	
 	
