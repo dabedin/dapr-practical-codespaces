@@ -14,6 +14,11 @@
 	// some base images require a specific user name
 	"remoteUser": "vscode",
 	
+	// forward ports for the app
+	"forwardPorts": [
+		9411
+	],
+
 	// Install extensions
 	"extensions": [
 		"ms-dotnettools.csharp",
